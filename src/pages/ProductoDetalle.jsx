@@ -28,6 +28,7 @@ function ProductoDetalle() {
           <h3>{producto.nombre}</h3>
           <p className="descripcion">{producto.descripcion}</p>
           <div className="precio-box">${producto.precio}</div>
+          <p className="stock-info">Stock disponible: {producto.stock} unidades</p>
           <button className="btn-agregar" onClick={() => addToCart(producto)}>
             Agregar al carrito
           </button>

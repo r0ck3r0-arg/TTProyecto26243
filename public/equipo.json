@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nombre": "Leo",
+    "rol": "Desarrollador Front-End",
+    "avatar": "/img/avatar/1.webp"
+  },
+  {
+    "id": 2,
+    "nombre": "Nardo",
+    "rol": "Diseñador UI/UX",
+    "avatar": "/img/avatar/2.avif"
+  },
+  {
+    "id": 3,
+    "nombre": "Ruiz",
+    "rol": "Especialista en QA",
+    "avatar": "/img/avatar/3.webp"
+  }
+]
