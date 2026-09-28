@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "nombre": "Marcapáginas de cuero artesanal",
+    "precio": 12.99,
+    "imagen": "/img/Marcapaginas.jpg",
+    "descripcion": "Marcapáginas artesanal de cuero, resistente y elegante."
+  },
+  {
+    "id": 2,
+    "nombre": "Luz LED para lectura",
+    "precio": 24.99,
+    "imagen": "/img/luz-led.jpg",
+    "descripcion": "Luz LED recargable, ideal para leer de noche sin molestar."
+  },
+  {
+    "id": 3,
+    "nombre": "Funda protectora de libros",
+    "precio": 18.99,
+    "imagen": "/img/funda.jpg",
+    "descripcion": "Funda acolchada para proteger tus libros favoritos."
+  },
+  {
+    "id": 4,
+    "nombre": "Soporte de libros ajustable",
+    "precio": 34.99,
+    "imagen": "/img/soporte.jpg",
+    "descripcion": "Atril ajustable para sostener el libro mientras leés."
+  },
+  {
+    "id": 5,
+    "nombre": "Clip sujetapáginas",
+    "precio": 8.99,
+    "imagen": "/img/clip.jpg",
+    "descripcion": "Clip práctico para marcar la página exacta."
+  }
+]
