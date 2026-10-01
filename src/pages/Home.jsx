@@ -1,23 +1,17 @@
+import { useState } from "react";
 import ItemListContainer from "../components/ItemListContainer";
 
-function validarFormulario(e) {
-  const nombre = e.target.nombre.value;
-  const email = e.target.email.value;
-  const mensaje = e.target.mensaje.value;
-
-  if (!nombre || !email || !mensaje) {
-    alert("Completá todos los campos");
-    e.preventDefault();
-    return;
-  }
-
-  if (!email.includes("@") || !email.includes(".")) {
-    alert("El correo no es válido");
-    e.preventDefault();
-  }
-}
-
 function Home() {
+  const [id, setId] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [precio, setPrecio] = useState("");
+  const [stock, setStock] = useState("");
+
+  const handleSubmitProducto = (e) => {
+    e.preventDefault();
+    console.log({ id, nombre, precio, stock });
+  };
+
   return (
     <>
       <section id="inicio">
@@ -39,10 +33,10 @@ function Home() {
       <section id="resenas">
         <h2>Reseñas</h2>
         <div className="grid-resenas">
-          <div className="resena">⭐️⭐️⭐️⭐️⭐️ Excelente calidad</div>
-          <div className="resena">⭐️⭐️⭐️⭐️ Muy buenos productos</div>
-          <div className="resena">⭐️⭐️⭐️⭐️⭐️ Me encantó</div>
-          <div className="resena">⭐️⭐️⭐️ Buen servicio</div>
+          <p className="resena">⭐️⭐️⭐️⭐️⭐️ Excelente calidad</p>
+          <p className="resena">⭐️⭐️⭐️⭐️ Muy buenos productos</p>
+          <p className="resena">⭐️⭐️⭐️⭐️⭐️ Me encantó</p>
+          <p className="resena">⭐️⭐️⭐️ Buen servicio</p>
         </div>
       </section>
 
@@ -77,15 +71,44 @@ function Home() {
             ></iframe>
           </div>
 
-          <form
-            action="https://formspree.io/f/xgodkrdr"
-            method="POST"
-            onSubmit={validarFormulario}
-          >
-            <input type="text" name="nombre" placeholder="Nombre" required />
-            <input type="email" name="email" placeholder="Correo" required />
-            <textarea name="mensaje" placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
+          <form onSubmit={handleSubmitProducto}>
+            <h3>Agregar Nuevo Producto</h3>
+
+            <label>Id:</label>
+            <input
+              type="text"
+              value={id}
+              onChange={(e) => setId(e.target.value)}
+            />
+
+            <label>Nombre del Producto:</label>
+            <input
+              type="text"
+              placeholder="Ej: Teclado Mecánico"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+            />
+
+            <label>Precio:</label>
+            <input
+              type="number"
+              placeholder="Ej: 95"
+              value={precio}
+              onChange={(e) => setPrecio(e.target.value)}
+            />
+
+            <label>Stock:</label>
+            <input
+              type="number"
+              placeholder="Ej: 5"
+              value={stock}
+              onChange={(e) => setStock(e.target.value)}
+            />
+
+            <label>Imagen:</label>
+            <input type="file" />
+
+            <button type="submit">Guardar Producto</button>
           </form>
         </div>
       </section>
