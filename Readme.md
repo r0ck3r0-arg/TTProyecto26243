@@ -11,18 +11,18 @@ TiendaAccesorios es una tienda online de accesorios para lectores, donde se pued
 ## Tecnologías utilizadas
 
 - React
-- React Router DOM
+- React Router DOM - En desarrollo
 - Context API
 - Vite
 - CSS (Flexbox, Grid, Media Queries)
 
 ## Funcionalidades
 
-- Navegación con React Router (Inicio, Productos, Detalle de producto, Carrito)
+- Navegación con React Router (Inicio, Productos, Detalle de producto, Carrito) - En desarrollo
 - Catálogo de productos cargado desde `productos.json` con `fetch` y `useEffect`
-- Carrito de compras manejado con Context API (agregar, ver cantidad total, eliminar)
+- Carrito de compras manejado con Context API (agregar, ver cantidad total, eliminar) - En desarrollo
 - Diseño responsivo
-- Formulario de contacto
+- Formulario
 
 ## Cómo correr el proyecto
 
