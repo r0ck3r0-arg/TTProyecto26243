@@ -84,7 +84,6 @@ function Home() {
             <label>Nombre del Producto:</label>
             <input
               type="text"
-              placeholder="Ej: Teclado Mecánico"
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
             />
@@ -92,7 +91,6 @@ function Home() {
             <label>Precio:</label>
             <input
               type="number"
-              placeholder="Ej: 95"
               value={precio}
               onChange={(e) => setPrecio(e.target.value)}
             />
@@ -100,7 +98,6 @@ function Home() {
             <label>Stock:</label>
             <input
               type="number"
-              placeholder="Ej: 5"
               value={stock}
               onChange={(e) => setStock(e.target.value)}
             />
