@@ -6,10 +6,31 @@ function Home() {
   const [nombre, setNombre] = useState("");
   const [precio, setPrecio] = useState("");
   const [stock, setStock] = useState("");
+  const [imagen, setImagen] = useState(null);
 
-  const handleSubmitProducto = (e) => {
+  const handleSubmitProducto = async (e) => {
     e.preventDefault();
-    console.log({ id, nombre, precio, stock });
+
+    console.log("Subiendo imagen a Imgbb...");
+
+    const formData = new FormData();
+    formData.append("image", imagen);
+
+    const apiKey = import.meta.env.VITE_IMGBB_API_KEY;
+    const response = await fetch(`https://api.imgbb.com/1/upload?key=${apiKey}`, {
+      method: "POST",
+      body: formData,
+    });
+    const data = await response.json();
+    const urlImagen = data.data.url;
+
+    console.log("Imagen subida con éxito.");
+    console.log("URL: " + urlImagen);
+
+    const nuevoProducto = { id, nombre, precio, stock, urlImagen };
+
+    console.log("Enviando los siguientes datos COMPLETOS a la API:");
+    console.log(nuevoProducto);
   };
 
   return (
@@ -103,7 +124,10 @@ function Home() {
             />
 
             <label>Imagen:</label>
-            <input type="file" />
+            <input
+              type="file"
+              onChange={(e) => setImagen(e.target.files[0])}
+            />
 
             <button type="submit">Guardar Producto</button>
           </form>
